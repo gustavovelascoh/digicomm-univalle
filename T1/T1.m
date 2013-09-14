@@ -126,7 +126,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 data_raw = get(handles.edit_data,'String');
-data_str = data_raw{1,1};
+data_str = data_raw;
 
 if (regexp(data_str,'^[01]{4,16}$'))
     set(handles.message,'Visible','off');
