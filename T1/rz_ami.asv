@@ -1,0 +1,11 @@
+function y = rz_ami( x )
+%RZ_AMI Summary of this function goes here
+%   Detailed explanation goes here
+
+l = length(x);
+
+for i = [1:l]
+    
+end
+end
+
