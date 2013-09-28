@@ -176,7 +176,7 @@ if (regexp(data_str,'^[01]{4,16}$'))
     end
     
     out = resample(out,resample_f);
-    stairs(handles.axes1,0:0.25:l,[out out(end)]),axis([0 l+1.5 -1.25 1.25]);
+    stairs(handles.axes1,0:0.25:l+1-0.25,[out out(end)]),axis([0 l+1.5 -1.25 1.25]);
     set(handles.axes1,'XGrid','on');
     
 else
