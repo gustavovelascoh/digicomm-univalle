@@ -109,10 +109,14 @@ if (regexp(data_str,'^[01]{4,16}$'))
     
     data_arr = split_str(data_str);
     
-    x = resample(data_arr,10);
+    x = resample(data_arr,25);
     xpn = awgn(x,20);
+    noise = xpn - x;
+    n_std = std(noise);
     l = length(x);
-    plot(handles.axes,[xpn;x]'),axis([0 l+1.5 -1.25 1.25]);
-    %set(handles.axes,'XGrid','on');
+    plot(handles.axes,x),axis([0 l+1.5 -1.25 1.25]),
+    plot(handles.axes2,noise),axis([0 l+1.5 -1.25 1.25]),
+    plot(handles.axes3,[xpn;x]'),axis([0 l+1.5 -1.25 1.25]),
+    set(handles.std_text,'String',strcat('std = ',num2str(n_std)));
 
 end
