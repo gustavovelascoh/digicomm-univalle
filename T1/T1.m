@@ -54,6 +54,8 @@ function T1_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for T1
 handles.output = hObject;
+global data;
+global data_str;
 
 % Update handles structure
 guidata(hObject, handles);
@@ -93,6 +95,12 @@ function edit_data_CreateFcn(hObject, eventdata, handles)
 %       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
+end
+
+
+global data_str;
+if length(data_str) > 3
+    set(hObject,'String',data_str);
 end
 
 

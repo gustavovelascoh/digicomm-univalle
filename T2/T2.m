@@ -114,9 +114,30 @@ if (regexp(data_str,'^[01]{4,16}$'))
     noise = xpn - x;
     n_std = std(noise);
     l = length(x);
-    plot(handles.axes,x),axis([0 l+1.5 -1.25 1.25]),
-    plot(handles.axes2,noise),axis([0 l+1.5 -1.25 1.25]),
-    plot(handles.axes3,[xpn;x]'),axis([0 l+1.5 -1.25 1.25]),
+    plot(handles.axes,x);
+    set(handles.axes,'XLim',[0 l+1.5],'YLim', [min(x)-0.2 max(x)+0.2]);
+    plot(handles.axes2,noise);
+    set(handles.axes2,'XLim',[0 l+1.5],'YLim', [min(noise)-0.1 max(noise)+0.1]);
+    plot(handles.axes3,[xpn;x]');
+    set(handles.axes3,'XLim',[0 l+1.5],'YLim', [min(xpn)-0.1 max(xpn)+0.1]);
     set(handles.std_text,'String',strcat('std = ',num2str(n_std)));
+    
+    s_corr = xcorr(x,xpn);
+    
+    plot(handles.axes4,[-l+1:l-1],s_corr);
+    set(handles.axes4,'YLim', [min(s_corr)-10 max(s_corr)+10],'YGrid','on','XGrid','on');
+    
+    corr_o = zeros(1,l);
+    s = 0;
+    for i=1:l
+        if mod(i,25)== 0
+            s = 0;
+        end
+        
+        s = s + xpn(i);
+        corr_o(i) = s;               
+    end
 
+    plot(handles.axes5,corr_o);
+    %set(handles.axes4,'YLim', [min(s_corr)-10 max(s_corr)+10],'YGrid','on','XGrid','on');
 end
