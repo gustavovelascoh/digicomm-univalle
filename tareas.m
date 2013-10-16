@@ -22,7 +22,7 @@ function varargout = tareas(varargin)
 
 % Edit the above text to modify the response to help tareas
 
-% Last Modified by GUIDE v2.5 05-Oct-2013 12:43:49
+% Last Modified by GUIDE v2.5 12-Oct-2013 16:41:50
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -129,19 +129,19 @@ global data;
 T1;
 
 
-% --- Executes on selection change in pu_codification.
-function pu_codification_Callback(hObject, eventdata, handles)
-% hObject    handle to pu_codification (see GCBO)
+% --- Executes on selection change in pu_cod.
+function pu_cod_Callback(hObject, eventdata, handles)
+% hObject    handle to pu_cod (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns pu_codification contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from pu_codification
+% Hints: contents = cellstr(get(hObject,'String')) returns pu_cod contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from pu_cod
 
 
 % --- Executes during object creation, after setting all properties.
-function pu_codification_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to pu_codification (see GCBO)
+function pu_cod_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to pu_cod (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
