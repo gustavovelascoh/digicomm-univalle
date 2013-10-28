@@ -131,7 +131,7 @@ function mod_b_Callback(hObject, eventdata, handles)
 global mod_type
 
 data_e = get(handles.data_e,'String');
-x = parse_data(data_e{1});
+x = parse_data(data_e);
 M = 2;
 
 if length(x) > 1
