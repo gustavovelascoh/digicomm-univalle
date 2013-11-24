@@ -22,7 +22,7 @@ function varargout = tareasFinal(varargin)
 
 % Edit the above text to modify the response to help tareasFinal
 
-% Last Modified by GUIDE v2.5 24-Nov-2013 15:00:53
+% Last Modified by GUIDE v2.5 24-Nov-2013 15:23:42
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -61,6 +61,10 @@ guidata(hObject, handles);
 % UIWAIT makes tareasFinal wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+global item
+
+item = 1;
+
 
 % --- Outputs from this function are returned to the command line.
 function varargout = tareasFinal_OutputFcn(hObject, eventdata, handles) 
@@ -81,7 +85,7 @@ function listbox1_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns listbox1 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from listbox1
-
+global item
 item = get(hObject,'Value');
 text = {'Tareas del Curso "Comunicación Digital"', 'Universidad del Valle','Gustavo Velasco-Hernández. 2013'};
 
@@ -139,3 +143,29 @@ function text1_CreateFcn(hObject, eventdata, handles)
 
 text = {'Tareas del Curso "Comunicación Digital"', 'Universidad del Valle','Gustavo Velasco-Hernández. 2013'};
 set(hObject,'String',text);
+
+
+% --- Executes on button press in abrirb.
+function abrirb_Callback(hObject, eventdata, handles)
+% hObject    handle to abrirb (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+global item
+
+switch item
+    case 1
+        T0;
+    case 2
+        T1;
+    case 3;
+        T2;
+    case 4
+        T3;
+    case 5
+        msgbox('Not Found','Not Found');
+    case 6
+        T5;
+    case 7
+        msgbox('Not Found','Not Found');
+end
