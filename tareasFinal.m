@@ -163,7 +163,7 @@ switch item
     case 4
         T3;
     case 5
-        msgbox('Not Found','Not Found');
+        T4;
     case 6
         T5;
     case 7
