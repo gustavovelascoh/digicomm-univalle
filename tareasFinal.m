@@ -119,7 +119,7 @@ switch item
     otherwise
 end
 
-set(handles.text1,'String',text);
+set(handles.text1,'string',text);
 
 
 % --- Executes during object creation, after setting all properties.
